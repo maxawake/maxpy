@@ -1,0 +1,18 @@
+import numpy as np
+
+eps_0 = 8.8541878188e-12  # As(Vm)^-1
+hbar = 1.054571817e-34  # J s
+e = 1.60217663e-19  # C
+m_e = 9.10938356e-31  # kg
+m_p = 1.6726219e-27  # kg
+u = 1.66053906660e-27  # kg
+alpha = 1 / 137.035999084  # fine structure constant
+c = 299792458  # m/s
+eV = 1.60217662e-19  # J
+Ry = 13.605693009  # eV
+k_B = 1.38064852e-23  # m^2 kg s-2 K-1
+pc = 3.085677581491367e16  # m
+
+# composites
+a_0 = 4 * np.pi * eps_0 * hbar**2 / (m_e * e**2)
+h = hbar * 2 * np.pi
