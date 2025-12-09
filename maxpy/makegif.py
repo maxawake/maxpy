@@ -7,7 +7,6 @@ import tqdm
 import warnings
 import numpy as np
 import multiprocessing as mp
-from maxpy.style import *
 
 
 def make_gif(callback: callable, data: np.array, gifpath=None, fps=25, frame=True):
