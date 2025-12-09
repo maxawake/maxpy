@@ -1062,6 +1062,7 @@ source = { virtual = "." }
 dependencies = [
     { name = "astropy" },
     { name = "cmasher" },
+    { name = "colorspacious" },
     { name = "colour" },
     { name = "h5py" },
     { name = "imageio" },
@@ -1090,6 +1091,7 @@ dependencies = [
 requires-dist = [
     { name = "astropy", specifier = ">=7.2.0" },
     { name = "cmasher", specifier = ">=1.9.2" },
+    { name = "colorspacious", specifier = ">=1.1.2" },
     { name = "colour", specifier = ">=0.1.5" },
     { name = "h5py", specifier = ">=3.15.1" },
     { name = "imageio", specifier = ">=2.37.2" },

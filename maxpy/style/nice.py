@@ -23,7 +23,7 @@ plt.rcParams["grid.alpha"] = 0.7
 plt.rcParams["grid.linewidth"] = 0.5
 
 
-plt.rcParams["figure.dpi"] = 150
+# plt.rcParams["figure.dpi"] = 150
 plt.rcParams["figure.figsize"] = (6, 4)  # Default figure size
 
 # plt.rcParams["xtick.major.size"] = 20
