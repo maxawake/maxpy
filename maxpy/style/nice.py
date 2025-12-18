@@ -43,6 +43,23 @@ plt.rcParams["lines.linewidth"] = 2.0
 plt.rcParams["legend.fontsize"] = 12
 
 
+def dark_mode(background="#1e1e2e", fg="#e0e0e0", grid="#787878"):
+    plt.rcParams["figure.facecolor"] = background
+    plt.rcParams["axes.facecolor"] = background
+    plt.rcParams["savefig.facecolor"] = background
+    plt.rcParams["axes.edgecolor"] = fg
+    plt.rcParams["axes.labelcolor"] = fg
+    plt.rcParams["xtick.color"] = fg
+    plt.rcParams["ytick.color"] = fg
+    plt.rcParams["text.color"] = fg
+    plt.rcParams["axes.grid"] = True
+    plt.rcParams["grid.color"] = grid
+    plt.rcParams["grid.alpha"] = 0.4
+    plt.rcParams["grid.linestyle"] = ":"
+    plt.rcParams["legend.facecolor"] = background
+    plt.rcParams["legend.edgecolor"] = fg
+
+
 if __name__ == "__main__":
     # Test the style by creating a sample plot
     import numpy as np

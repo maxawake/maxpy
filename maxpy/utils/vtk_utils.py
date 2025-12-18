@@ -142,3 +142,47 @@ def vtk_to_np(data):
         else:
             raise RuntimeError("unknow type")
     return numpy_data
+
+
+class VTIWrapper:
+    def __init__(self, dimensions, origin, spacing):
+        self.image = vtk.vtkImageData()
+        self.image.SetDimensions(dimensions)
+        self.image.SetOrigin(origin)
+        self.image.SetSpacing(spacing)
+
+    def add_scalars(self, scalar_data, name="scalars"):
+        dset = scalar_data
+        dset_flat = dset.flatten(order="F")
+
+        vtk_array = numpy_support.numpy_to_vtk(
+            dset_flat,
+            deep=True,
+            array_type=vtk.VTK_FLOAT,
+        )
+
+        vtk_array.SetName(name)
+
+        self.image.GetPointData().SetScalars(vtk_array)
+
+    def add_vectors(self, vector_data, name="vectors"):
+        dset = vector_data
+        dset = dset.transpose(1, 2, 3, 0)
+        dset_flat = np.array([dset[:, :, :, i].flatten(order="F") for i in range(3)]).T
+
+        vtk_array = numpy_support.numpy_to_vtk(
+            dset_flat,
+            deep=True,
+            array_type=vtk.VTK_FLOAT,
+        )
+
+        vtk_array.SetName(name)
+        vtk_array.SetNumberOfComponents(3)
+
+        self.image.GetPointData().SetVectors(vtk_array)
+
+    def write(self, filepath):
+        writer = vtk.vtkXMLImageDataWriter()
+        writer.SetFileName(filepath)
+        writer.SetInputData(self.image)
+        writer.Write()
