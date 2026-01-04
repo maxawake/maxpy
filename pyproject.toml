@@ -14,12 +14,10 @@ dependencies = [
     "ipykernel>=7.1.0",
     "ipympl>=0.9.8",
     "ipywidgets>=8.1.8",
-    "manim>=0.19.1",
     "matplotlib>=3.10.7",
     "numpy>=2.3.5",
     "opencv-python>=4.11.0.86",
     "pandas>=2.3.3",
-    "pyaudio>=0.2.14",
     "pygments>=2.19.2",
     "pyqt5>=5.15.11",
     "pyvista>=0.46.4",
@@ -30,4 +28,8 @@ dependencies = [
     "tqdm>=4.67.1",
     "vtk>=9.5.2",
     "yt>=4.4.2",
+]
+optional-dependencies = [
+    "manim",
+    "pyaudio",
 ]
