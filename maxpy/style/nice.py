@@ -60,6 +60,13 @@ def dark_mode(background="#1e1e2e", fg="#e0e0e0", grid="#787878"):
     plt.rcParams["legend.edgecolor"] = fg
 
 
+def disable_latex():
+    plt.rcParams["text.usetex"] = False
+    plt.rcParams["font.family"] = "sans-serif"
+    plt.rcParams["font.sans-serif"] = ["DejaVu Sans"]
+    plt.rcParams["font.size"] = 12
+
+
 if __name__ == "__main__":
     # Test the style by creating a sample plot
     import numpy as np
