@@ -83,6 +83,8 @@ def default_style():
 
     plt.rcParams["legend.fontsize"] = 12
 
+    plt.margins(0)
+
 
 def dark_mode(background="#1e1e2e", fg="#e0e0e0", grid="#787878"):
     plt.rcParams["figure.facecolor"] = background
