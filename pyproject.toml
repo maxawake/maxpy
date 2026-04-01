@@ -29,7 +29,3 @@ dependencies = [
     "vtk>=9.5.2",
     "yt>=4.4.2",
 ]
-optional-dependencies = [
-    "manim",
-    "pyaudio",
-]
