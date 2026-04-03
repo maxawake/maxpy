@@ -1,3 +1,6 @@
+import numpy as np
+
+
 def _get_tex_for_symbol(units, symbol):
     # Try to recover the registry TeX form first.
     # In unyt, unit registries store a LaTeX representation per symbol.
@@ -40,3 +43,11 @@ def latex_units(expr):
             parts.append(rf"{tex}^{{{power}}}")
 
     return r"$\left(" + r"\,".join(parts) + r"\right)$"
+
+
+def scientific_exponent(expr):
+    if expr == 0:
+        return "0"
+    exponent = int(np.floor(np.log10(abs(expr))))
+    mantissa = expr / (10**exponent)
+    return rf"{mantissa:.2f} \times 10^{{{exponent}}}"
