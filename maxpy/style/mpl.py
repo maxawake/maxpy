@@ -84,8 +84,8 @@ def default_style():
     plt.rcParams["legend.fontsize"] = 12
 
     # set margin to zero
-    plt.rcParams["axes.xmargin"] = 0
-    plt.rcParams["axes.ymargin"] = 0
+    plt.rcParams["axes.xmargin"] = 0.0
+    plt.rcParams["axes.ymargin"] = 0.1
 
 
 def dark_mode(background="#1e1e2e", fg="#e0e0e0", grid="#787878"):
@@ -115,7 +115,7 @@ def disable_latex():
 def align_cbar(ax, im, fig, label, pad=0.0, size=5, orientation="vertical"):
     divider = make_axes_locatable(ax)
     place = "top" if orientation == "horizontal" else "right"
-    cax = divider.append_axes(place, size=f"{size}%", pad=pad)
+    cax = divider.append_axes(place, size=f"{str(size)}%", pad=pad)
     fig.colorbar(im, cax=cax, label=label, orientation=orientation)
 
 
