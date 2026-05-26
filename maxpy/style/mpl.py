@@ -64,13 +64,13 @@ def default_style():
     plt.rcParams["grid.alpha"] = 0.7
     plt.rcParams["grid.linewidth"] = 0.5
 
+<<<<<<< HEAD
     # plt.rcParams["figure.dpi"] = 150
     plt.rcParams["figure.figsize"] = (5, 4)  # Default figure size
+=======
+    plt.rcParams["figure.figsize"] = (6, 4)
+>>>>>>> be2e22ca8d6003a349314e2e623af49c19b678fb
 
-    # plt.rcParams["xtick.major.size"] = 20
-    # plt.rcParams["ytick.major.size"] = 20
-    # plt.rcParams["xtick.minor.size"] = 10
-    # plt.rcParams["ytick.minor.size"] = 10
     plt.rcParams["xtick.major.width"] = 1.5
     plt.rcParams["ytick.major.width"] = 1.5
     plt.rcParams["xtick.minor.width"] = 1.0
@@ -117,30 +117,3 @@ def align_cbar(ax, im, fig, label, pad=0.0, size=5, orientation="vertical"):
     place = "top" if orientation == "horizontal" else "right"
     cax = divider.append_axes(place, size=f"{str(size)}%", pad=pad)
     fig.colorbar(im, cax=cax, label=label, orientation=orientation)
-
-
-if __name__ == "__main__":
-    # Test the style by creating a sample plot
-    import numpy as np
-
-    xlin = np.linspace(-1, 1, 100)
-    plt.plot(xlin, np.sinh(xlin), label="sinh(x)")
-    plt.plot(xlin, np.sin(xlin), label="sin(x)")
-    plt.plot(xlin, xlin**2, label="$x^2$")
-    plt.plot(xlin, xlin**3, label="$x^3$")
-    plt.plot(xlin, 1 / (1 + xlin**2), label=r"$\frac{1}{1+x^2}$")
-    plt.grid()
-    plt.legend()
-    plt.xlabel("$x$ in $\\Omega$")
-    plt.ylabel("$f(x) \\in \\int_0^\\infty \\xi\\cdot\\mathrm{{d}}A$")
-    plt.title("Various Mathematical Functions")
-    plt.show()
-
-    x, y = np.meshgrid(xlin, xlin)
-    z = np.sinh(np.sqrt(x**2 + y**2))
-    plt.contourf(x, y, z, levels=50, cmap=CMAP)
-    plt.colorbar(label="$\\sinh(\\sqrt{x^2 + y^2})$")
-    plt.xlabel("$x$ in $\\Omega$")
-    plt.ylabel("$y$ in $\\Omega$")
-    plt.title("Contour Plot of $\\sinh(\\sqrt{x^2 + y^2})$")
-    plt.show()
