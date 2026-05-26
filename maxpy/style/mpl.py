@@ -64,13 +64,8 @@ def default_style():
     plt.rcParams["grid.alpha"] = 0.7
     plt.rcParams["grid.linewidth"] = 0.5
 
-<<<<<<< HEAD
     # plt.rcParams["figure.dpi"] = 150
     plt.rcParams["figure.figsize"] = (5, 4)  # Default figure size
-=======
-    plt.rcParams["figure.figsize"] = (6, 4)
->>>>>>> be2e22ca8d6003a349314e2e623af49c19b678fb
-
     plt.rcParams["xtick.major.width"] = 1.5
     plt.rcParams["ytick.major.width"] = 1.5
     plt.rcParams["xtick.minor.width"] = 1.0
