@@ -107,8 +107,14 @@ def disable_latex():
     plt.rcParams["font.size"] = 12
 
 
-def align_cbar(ax, im, fig, label, pad=0.0, size=5, orientation="vertical"):
+def align_cbar(ax, im, fig, label, pad=0.0, size=5, orientation="vertical", visible=True):
     divider = make_axes_locatable(ax)
     place = "top" if orientation == "horizontal" else "right"
     cax = divider.append_axes(place, size=f"{str(size)}%", pad=pad)
-    fig.colorbar(im, cax=cax, label=label, orientation=orientation)
+    if not visible:
+        cax.set_visible(False)
+        return
+    cbar = fig.colorbar(im, cax=cax, label=label, orientation=orientation)
+    if orientation == "horizontal":
+        # cax.xaxis.set_ticks_position("top")
+        cax.xaxis.set_label_position("top")
