@@ -1,3 +1,5 @@
+import json
+import os
 from fractions import Fraction as frac
 
 import cmasher
@@ -65,21 +67,23 @@ def default_style():
     plt.rcParams["grid.linewidth"] = 0.5
 
     # plt.rcParams["figure.dpi"] = 150
-    plt.rcParams["figure.figsize"] = (5, 4)  # Default figure size
+    plt.rcParams["figure.figsize"] = (5, 3)  # Default figure size
     plt.rcParams["xtick.major.width"] = 1.5
     plt.rcParams["ytick.major.width"] = 1.5
     plt.rcParams["xtick.minor.width"] = 1.0
     plt.rcParams["ytick.minor.width"] = 1.0
 
     plt.rcParams["axes.linewidth"] = 1.5
-    plt.rcParams["axes.prop_cycle"] = plt.cycler("color", ["#1982C4", "#F8A517", "#589F2B", "#FF595E", "#6A4C93"])
+    plt.rcParams["axes.prop_cycle"] = plt.cycler(
+        "color", ["#8839ef", "#ea76cb", "#1982C4", "#F8A517", "#179299", "#fe640b", "#e64553", "#d20f39"]
+    )  # ["#1982C4", "#F8A517", "#589F2B", "#FF595E", "#6A4C93"])
 
     plt.rcParams["lines.linewidth"] = 2.0
 
     plt.rcParams["legend.fontsize"] = 12
 
     # set margin to zero
-    plt.rcParams["axes.xmargin"] = 0.0
+    plt.rcParams["axes.xmargin"] = 0.1
     plt.rcParams["axes.ymargin"] = 0.1
 
 
@@ -118,3 +122,10 @@ def align_cbar(ax, im, fig, label, pad=0.0, size=5, orientation="vertical", visi
     if orientation == "horizontal":
         # cax.xaxis.set_ticks_position("top")
         cax.xaxis.set_label_position("top")
+
+
+def load_palette():
+    package_path = os.path.dirname(__file__)
+    with open(os.path.join(package_path, "catpuccin.json")) as f:
+        palette = json.load(f)
+    return palette
