@@ -10,4 +10,5 @@ __all__ = [
     "pi_axis_formatter",
     "align_cbar",
     "load_palette",
+    "set_color_theme",
 ]
