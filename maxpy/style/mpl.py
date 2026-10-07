@@ -74,17 +74,32 @@ def default_style():
     plt.rcParams["ytick.minor.width"] = 1.0
 
     plt.rcParams["axes.linewidth"] = 1.5
-    plt.rcParams["axes.prop_cycle"] = plt.cycler(
-        "color", ["#8839ef", "#ea76cb", "#1982C4", "#F8A517", "#179299", "#fe640b", "#e64553", "#d20f39"]
-    )  # ["#1982C4", "#F8A517", "#589F2B", "#FF595E", "#6A4C93"])
 
     plt.rcParams["lines.linewidth"] = 2.0
 
     plt.rcParams["legend.fontsize"] = 12
 
     # set margin to zero
-    plt.rcParams["axes.xmargin"] = 0.1
-    plt.rcParams["axes.ymargin"] = 0.1
+    plt.rcParams["axes.xmargin"] = 0.05
+    plt.rcParams["axes.ymargin"] = 0.05
+
+    set_color_theme()
+
+
+def set_color_theme(name="default"):
+    if name == "default":
+        colors = ["#470062", "#656BE3", "#9319E3", "#19A3E3", "#1923E3", "#64DFDF", "#5D007F"]
+
+    if name == "pastell":
+        colors = ["#8839ef", "#ea76cb", "#1982C4", "#F8A517", "#179299", "#fe640b", "#e64553", "#d20f39"]
+
+    if name == "matplotlib":
+        colors = ["#1982C4", "#F8A517", "#589F2B", "#FF595E", "#6A4C93"]
+
+    if name not in ["default", "pastell", "matplotlib"]:
+        raise ValueError(f"Unknown color theme: {name}")
+
+    plt.rcParams["axes.prop_cycle"] = plt.cycler("color", colors)
 
 
 def dark_mode(background="#1e1e2e", fg="#e0e0e0", grid="#787878"):
