@@ -51,15 +51,16 @@ def default_style():
     plt.rcParams["text.usetex"] = True
 
     plt.rcParams["text.latex.preamble"] = r"""
-    \usepackage{lmodern}
+    %\usepackage{lmodern}
     \usepackage[T1]{fontenc}
-    \usepackage{mathptmx}      % Times (serif)
+    \usepackage{newtxtext,newtxmath}
+    %\usepackage{mathptmx}      % Times (serif)
     \usepackage{amsmath}       % Math packages
     \usepackage{bm}            % Bold math
     """
 
     plt.rcParams["font.family"] = "serif"
-    plt.rcParams["font.serif"] = ["Computer Modern Roman"]
+    # plt.rcParams["font.serif"] = ["Computer Modern Roman"]
     plt.rcParams["font.size"] = 12
 
     plt.rcParams["grid.linestyle"] = "--"
@@ -137,6 +138,8 @@ def align_cbar(ax, im, fig, label, pad=0.0, size=5, orientation="vertical", visi
     if orientation == "horizontal":
         # cax.xaxis.set_ticks_position("top")
         cax.xaxis.set_label_position("top")
+
+    return cbar
 
 
 def load_palette():
