@@ -1,0 +1,10 @@
+2026-11-22 19:40:13,327 CRITICAL __main__:2 | Processing 128 snapshots
+2026-11-22 19:43:38,321 INFO     __main__:1 | {'grid': [256, 256, 256], 'solver': {'tolerance': 1e-08, 'max_iterations': 1000}}
+2026-11-22 19:43:45,821 INFO     __main__:1 | grid:
+- 256
+- 256
+- 256
+solver:
+  max_iterations: 1000
+  tolerance: 1.0e-08
+
