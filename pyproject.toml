@@ -28,4 +28,6 @@ dependencies = [
     "tqdm>=4.67.1",
     "vtk>=9.5.2",
     "yt>=4.4.2",
+    "rich",
+    "rich-click",
 ]
